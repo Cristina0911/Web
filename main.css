@@ -1,0 +1,693 @@
+/* Reset și bază */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+}
+  
+a {
+    text-decoration: none;
+    color: inherit;
+}
+  
+ul {
+    list-style-type: none;
+}
+  
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Header */
+.header {
+    background-color: #000;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+  
+.logo_image {
+    height: auto;
+}
+  
+/* Navigație */
+.header__nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.nav__wrapper {
+    display: flex;
+    align-items: center;
+}
+  
+.nav__item {
+    display: inline-block;
+    position: relative;
+}
+  
+/* Adaugă bară verticală între elemente */
+.nav__wrapper::before,
+.nav__item:not(:last-child)::after,
+.nav__wrapper::after {
+    content: "|";
+    display: inline-block;
+    color: #555;
+    margin: 0 15px;
+}
+  
+/* Pentru link-urile din navigație */
+.nav__link {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: #0088cc;
+}
+
+/* Pentru butonul de căutare */
+.search-button {
+    color: #fff;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.search-button:hover {
+    color: #0088cc;
+}
+
+/* Pentru butonul de oferte */
+.offers-button {
+    background-color: #0088cc;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.offers-button:hover {
+    background-color: #006699;
+}
+
+/* Pentru link-urile din conținut */
+.content a {
+    color: #0088cc;
+    transition: color 0.3s ease;
+}
+
+.content a:hover {
+    color: #006699;
+}
+
+/* Pentru butonul "Vezi toate articolele" */
+.related__action {
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.related__action:hover {
+    background-color: #006699;
+}
+
+/* Pentru link-urile din meniul footer-ului */
+.menu__link {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #fff;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.menu__link:hover {
+    color: #0088cc;
+}
+  
+.nav__link--active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+  
+/* Căutare și buton oferte */
+.header__actions {
+    position: absolute;
+    right: 100px;
+    display: flex;
+    align-items: center;
+}
+  
+.search-button {
+    color: #fff;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+  
+.offers-button {
+    background-color: #0088cc;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+/* Hero section */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('cyclist-racing.jpg');
+    background-size: contain; /* Schimbat din cover în contain */
+    background-repeat: no-repeat; /* Evită repetarea imaginii */
+    background-position: center; /* Asigură centrare */
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    width: 100%;
+    height: 400px; /* Înălțime fixă pentru hero section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; /* Evită goluri dacă imaginea nu umple zona */
+}
+.hero h1::after {
+    content: "";
+    background-color: #fff;
+    width: 30px;
+    height: 2px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 14px;
+}
+.hero__wrapper {
+    z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.hero__title {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero__subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+  
+/* Main content */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.article__wrapper {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+  
+.content__title {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+  
+.content p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 15px;
+}
+  
+.content a {
+    color: #0088cc;
+}
+  
+/* Înlocuiți aceste secțiuni (aproximativ linia 111-132) cu: */
+.content__quote {
+    display: flex;
+    position: relative;
+    padding-left: 80px; /* Spațiu pentru ghilimelele mari */
+    margin: 40px 0;
+}
+
+.content__quote::before {
+    content: "“";
+    font-size: 8em; /* Mărit pentru a fi mai vizibil */
+    font-weight: 900; /* Extra bold pentru a fi mai negru */
+    color: #000; /* Negru complet */
+    position: absolute;
+    left: 0;
+    top: -40px;
+    opacity: 1; /* Complet opac pentru contrast maxim */
+    line-height: 1;
+    font-family: "Times New Roman", serif; /* Font care are ghilimele mai distinctive */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Ușoară umbră pentru profunzime */
+}
+
+.quote__author {
+    color: #888;
+    font-weight: bold;
+    position: absolute;
+    left: -15px; /* Aliniat cu ghilimelele */
+    top: 45px; /* Poziționează autorul sub ghilimele */
+    width: 80px;
+}
+
+.content__quote p {
+    font-style: italic;
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+.quote__author-left {
+    flex: 0 0 80px;
+    font-weight: bold;
+    color: #999;
+    text-align: right;
+    padding-right: 15px;
+}
+.quote__text {
+    flex: 1;
+    font-style: italic;
+    color: #666;
+    position: relative;
+    padding-left: 40px;
+}
+.quote__text::before {
+    content: """;
+    font-size: 60px;
+    position: absolute;
+    left: 0;
+    top: -20px;
+    color: #ccc;
+}
+  
+.content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px 0;
+    max-width: 100%;
+}
+/* Related articles */
+.related {
+    background-color: #000;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.related__title {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.related__wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.related__item {
+    width: 33.333%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+/* Stilizare corectă pentru articolele relevante */
+.related__item a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+.related__item .item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.item__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 15px;
+    margin: 0;
+    text-align: left;
+    font-size: 16px;
+    z-index: 1;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Stiluri pentru link-ul "Vezi toate articolele" */
+.related__action {
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.related__action:hover {
+    background-color: #006699;
+}
+  
+.social {
+    width: 100%;
+    margin: 30px auto;
+    padding: 0;
+    background-color: #fff;
+}
+
+.social__container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.social__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social__title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.social__title:first-child {
+    color: #3b5998; /* Culoare Facebook */
+}
+
+.social__title:last-child {
+    color: #1da1f2; /* Culoare Twitter */
+}
+
+.social__facebook-plugin {
+    display: flex;
+    align-items: center;
+}
+
+.fb-like-box {
+    display: flex;
+    align-items: center;
+}
+
+.fb-plugin-img {
+    margin-right: 10px;
+}
+
+.fb-like-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.fb-images {
+    display: flex;
+    margin-top: 5px;
+}
+
+.fb-thumb {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+/* Footer */
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 15px 0;
+}
+  
+.footer__menu {
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+  
+.menu__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+  
+.menu__item {
+    display: flex;
+    align-items: center;
+}
+  
+.menu__item:not(:last-child)::after {
+    content: "|";
+    color: #333;
+    margin: 0 15px;
+}
+  
+.menu__link {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #fff;
+    padding: 5px 0;
+}
+  
+.menu__link--active {
+    border-bottom: 2px solid #fff;
+}
+  
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+  /* Ajustez spațierea dintre elemente */
+.footer__social {
+    margin-right: 10px; /* Reduc spațiul dintre iconițele social media și poză */
+}
+
+.footer__image {
+    width: 120px; /* Măresc dimensiunea imaginii */
+    height: auto;
+}
+
+.footer__text {
+    margin-left: 10px; /* Reduc distanța dintre poză și text */
+}
+
+.footer__logo {
+    margin-bottom: 15px;
+}
+  
+.footer__copyright {
+    font-size: 12px;
+    opacity: 0.7;
+}
+  
+/* Style pentru articole relevante - imagini de fundal specifice */
+.related__item:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('cyclist1.jpg');
+}
+  
+.related__item:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('gradient-placeholder.jpg');
+}
+  
+.related__item:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('bike-gears.jpg');
+}
+  
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .nav__wrapper {
+        margin-top: 20px;
+    }
+    
+    .header__actions {
+        position: static;
+        margin-top: 20px;
+    }
+    
+    .related__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .related__item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+/* Asigură-te că imaginea de fundal se potrivește corect */
+.related__item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Hero section (imaginea de fundal) */
+/* Hero section (background image) */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('cyclist-racing.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    width: 100%;
+    height: 400px; /* Înălțime fixă pentru a afișa imaginea complet */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__wrapper {
+    z-index: 2;
+}
+
+/* Related article images */
+.related__item {
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    height: 200px; /* Înălțime mai mare pentru a afișa imaginile complet */
+    margin-bottom: 15px;
+}
+
+/* Asigură-te că imaginile acoperă întreaga zonă a containerului */
+.related__item:nth-child(1),
+.related__item:nth-child(2),
+.related__item:nth-child(3) {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.related__item:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('cyclist1.jpg');
+}
+
+.related__item:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('gradient-placeholder.jpg');
+}
+
+.related__item:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('bike-gears.jpg');
+}
+
+/* Stiluri pentru imaginile din secțiunea related, dacă folosești tag-uri img în loc de background-image */
+.related__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Aceasta asigură că imaginea acoperă întreaga zonă */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Asigură-te că titlul este deasupra imaginii */
+.item__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 20px;
+    z-index: 1;
+    margin: 0;
+}
+
+/* Pentru imagini în general */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.social__container {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.social__facebook-plugin {
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+.social__links {
+    align-items: flex-start;
+}
+}
